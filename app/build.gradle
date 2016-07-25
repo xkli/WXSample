@@ -14,7 +14,6 @@ android {
          * 必须加，否则64位手机无法加载so文件
          */
         ndk {
-            abiFilters "armeabi-v7a"
             abiFilters "x86"
             abiFilters "armeabi"
         }
