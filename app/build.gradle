@@ -1,5 +1,16 @@
-apply plugin: 'com.android.application'
+buildscript {
+    repositories {
+        maven {
+            url uri('../repo')
+        }
+    }
+    dependencies {
+        classpath 'com.weex.plugins:wplugin:0.0.1'
+    }
+}
 
+apply plugin: 'com.android.application'
+apply plugin: 'plugin.weex'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -34,5 +45,14 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.alibaba:fastjson:1.1.45'
     compile 'com.taobao.android:weex_sdk:0.5.1@aar'
-
 }
+
+task weex(type: Exec) {
+    if (System.properties['os.name'].toLowerCase().contains('windows') ) {
+        println "it's Windows"
+    } else {
+        executable "sh"
+        args "devtool.sh"
+    }
+}
+preBuild.dependsOn weex
