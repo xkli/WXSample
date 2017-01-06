@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
      * width 为-1 默认全屏，可以自己定制。
      * height =-1 默认全屏，可以自己定制。
      */
-    mWXSDKInstance.render("WXSample", WXFileUtils.loadFileContent("build/hello.js", this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
+    mWXSDKInstance.render("WXSample", WXFileUtils.loadAsset("build/hello.js", this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
   }
 
   @Override
