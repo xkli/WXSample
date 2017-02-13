@@ -9,7 +9,7 @@ import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
 import com.taobao.weex.utils.WXFileUtils;
 
-public class MainActivity extends AppCompatActivity implements IWXRenderListener {
+public class LocalActivity extends AppCompatActivity implements IWXRenderListener {
 
   WXSDKInstance mWXSDKInstance;
 
