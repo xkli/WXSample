@@ -1,1 +1,1 @@
-include ':app', ':wplugin'
+include ':app'
