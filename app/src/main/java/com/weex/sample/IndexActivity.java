@@ -25,5 +25,12 @@ public class IndexActivity extends AppCompatActivity {
         startActivity(new Intent(IndexActivity.this, NetworkActivity.class));
       }
     });
+
+    findViewById(R.id.btn_fragment).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(IndexActivity.this, WXFragmentActivity.class));
+      }
+    });
   }
 }
