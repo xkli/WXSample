@@ -6,7 +6,7 @@ import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;
 import com.weex.sample.extend.compontent.RichText;
-import com.weex.sample.extend.module.NetworkModule;
+import com.weex.sample.extend.module.PhoneInfoModule;
 
 /**
  * 注意要在Manifest中启用
@@ -26,7 +26,7 @@ public class WXApplication extends Application {
     InitConfig config = new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();
     WXSDKEngine.initialize(this, config);
     try {
-      WXSDKEngine.registerModule("network", NetworkModule.class);
+      WXSDKEngine.registerModule("poneInfo", PhoneInfoModule.class);
       WXSDKEngine.registerComponent("rich", RichText.class, false);
     } catch (WXException e) {
       e.printStackTrace();
