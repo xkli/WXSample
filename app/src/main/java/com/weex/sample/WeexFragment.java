@@ -63,6 +63,46 @@ public class WeexFragment extends Fragment implements IWXRenderListener {
   }
 
   @Override
+  public void onStart() {
+    super.onStart();
+    if(mWXSDKInstance!=null){
+      mWXSDKInstance.onActivityStart();
+    }
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    if(mWXSDKInstance!=null){
+      mWXSDKInstance.onActivityResume();
+    }
+  }
+
+  @Override
+  public void onPause() {
+    super.onPause();
+    if(mWXSDKInstance!=null){
+      mWXSDKInstance.onActivityPause();
+    }
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    if(mWXSDKInstance!=null){
+      mWXSDKInstance.onActivityStop();
+    }
+  }
+
+  @Override
+  public void onDestroy() {
+    super.onDestroy();
+    if(mWXSDKInstance!=null){
+      mWXSDKInstance.onActivityDestroy();
+    }
+  }
+
+  @Override
   public void onDetach() {
     super.onDetach();
   }

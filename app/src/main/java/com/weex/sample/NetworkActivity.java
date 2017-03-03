@@ -28,9 +28,15 @@ public class NetworkActivity extends AppCompatActivity implements IWXRenderListe
 
     mWXSDKInstance = new WXSDKInstance(this);
     mWXSDKInstance.registerRenderListener(this);
+    /**
+     * pageName:自定义，一个标示符号。
+     * url:远程bundle JS的下载地址
+     * options:初始化时传入WEEX的参数，比如 bundle JS地址
+     * flag:渲染策略。WXRenderStrategy.APPEND_ASYNC:异步策略先返回外层View，其他View渲染完成后调用onRenderSuccess。WXRenderStrategy.APPEND_ONCE 所有控件渲染完后后一次性返回。
+     */
     Map<String, Object> options = new HashMap<>();
     options.put(WXSDKInstance.BUNDLE_URL, TEST_URL);
-    mWXSDKInstance.renderByUrl("WXSample", TEST_URL, options, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
+    mWXSDKInstance.renderByUrl("WXSample",TEST_URL,options,null,WXRenderStrategy.APPEND_ONCE);
   }
 
   @Override

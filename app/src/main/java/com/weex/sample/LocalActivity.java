@@ -9,6 +9,9 @@ import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
 import com.taobao.weex.utils.WXFileUtils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LocalActivity extends AppCompatActivity implements IWXRenderListener {
 
   WXSDKInstance mWXSDKInstance;
@@ -25,10 +28,10 @@ public class LocalActivity extends AppCompatActivity implements IWXRenderListene
      * template 是.we transform 后的 js文件。
      * option 可以为空，或者通过option传入 js需要的参数。例如bundle js的地址等。
      * jsonInitData 可以为空。
-     * width 为-1 默认全屏，可以自己定制。
-     * height =-1 默认全屏，可以自己定制。
      */
-    mWXSDKInstance.render("WXSample", WXFileUtils.loadAsset("build/hello.js", this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);
+    Map<String,Object> options=new HashMap<>();
+    options.put(WXSDKInstance.BUNDLE_URL,"file://build/hello.js");
+    mWXSDKInstance.render("WXSample", WXFileUtils.loadAsset("build/hello.js", this), null, null, WXRenderStrategy.APPEND_ASYNC);
   }
 
   @Override

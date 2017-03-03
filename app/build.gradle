@@ -35,13 +35,3 @@ dependencies {
     compile 'com.android.support:design:23.4.0'
     testCompile 'junit:junit:4.12'
 }
-
-task weex(type: Exec) {
-    if (System.properties['os.name'].toLowerCase().contains('windows')) {
-        println "it's Windows"
-    } else {
-        executable "sh"
-        args "devtool.sh"
-    }
-}
-preBuild.dependsOn weex
