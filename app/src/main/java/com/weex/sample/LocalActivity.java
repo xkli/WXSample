@@ -30,8 +30,8 @@ public class LocalActivity extends AppCompatActivity implements IWXRenderListene
      * jsonInitData 可以为空。
      */
     Map<String,Object> options=new HashMap<>();
-    options.put(WXSDKInstance.BUNDLE_URL,"file://build/hello.js");
-    mWXSDKInstance.render("WXSample", WXFileUtils.loadAsset("build/hello.js", this), null, null, WXRenderStrategy.APPEND_ASYNC);
+    options.put(WXSDKInstance.BUNDLE_URL,"file://hello.js");
+    mWXSDKInstance.render("WXSample", WXFileUtils.loadAsset("hello.js", this), null, null, WXRenderStrategy.APPEND_ASYNC);
   }
 
   @Override
